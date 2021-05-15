@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e)=>{
     loc = search.value
     //console.log(location)
 
-    var url = "http://localhost:4000/weather?address="+loc
+    var url = "/weather?address="+loc
 
     fetch(url).then((response) => {
         response.json().then((data) => {
