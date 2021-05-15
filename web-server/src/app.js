@@ -1,10 +1,15 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const app = express()
 const request = require('request')
 const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
+
+
+const app = express()
+const port = process.env.PORT
+
+
 
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, '../templates/views'))
@@ -68,7 +73,7 @@ app.get('*',(req,res) => {
     res.render('errors')
 })
 
-app.listen(4000, ()=>{
-    console.log("Sever up and running on 4000");
+app.listen(port, ()=>{
+    console.log("Sever up and running on +" port);
 })
 
